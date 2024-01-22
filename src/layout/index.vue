@@ -6,7 +6,7 @@
       <!-- 展示菜单 -->
       <!-- 滚动组件 -->
       <el-scrollbar class="scrollbar">
-        <el-menu background-color="#001529" text-color="white">
+        <el-menu background-color="#001529" text-color="white" :default-active="$route.path">
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
@@ -25,8 +25,9 @@ import Logo from '@/layout/logo/index.vue'
 import Menu from '@/layout/menu/index.vue'
 import Main from '@/layout/main/index.vue'
 import { useUserStore } from '@/store/modules/user'
-import { MagicString } from 'vue/compiler-sfc';
+import { useRoute } from 'vue-router'
 let userStore = useUserStore()
+let $route = useRoute();
 </script>
 
 <style scoped lang="scss">
