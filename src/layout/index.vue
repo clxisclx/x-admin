@@ -14,7 +14,9 @@
     <!-- 顶部导航 -->
     <div class="layout_tabbar"></div>
     <!-- 内容展示区域 -->
-    <div class="layout_main"></div>
+    <div class="layout_main">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -62,7 +64,7 @@ let userStore = useUserStore()
     height: calc(100vh - $base-tabbar-height);
     left: $base-menu-width;
     top: $base-tabbar-height;
-    background-color: white;
+    background-color: skyblue;
     padding: 20px;
     overflow: auto;
   }
