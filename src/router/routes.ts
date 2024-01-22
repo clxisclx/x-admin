@@ -16,7 +16,8 @@ export const constantRoute = [
     component: () => import('@/layout/index.vue'),
     name: 'layout',
     meta: {
-      title: '/',
+      title: 'layout',
+      hidden: false
     },
     children: [
       {
@@ -24,6 +25,15 @@ export const constantRoute = [
         component: () => import('@/views/home/index.vue'),
         meta: {
           title: '首页',
+          hidden: false
+        },
+      },
+      {
+        path: '/test',
+        component: () => import('@/views/home/index.vue'),
+        meta: {
+          title: '测试',
+          hidden: true
         },
       },
     ],
@@ -34,6 +44,7 @@ export const constantRoute = [
     name: '404',
     meta: {
       title: '404',
+      hidden: true
     },
   },
   {
@@ -42,6 +53,7 @@ export const constantRoute = [
     name: 'Any',
     meta: {
       title: '任意',
+      hidden: true
     },
   },
 ]

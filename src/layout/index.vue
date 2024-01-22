@@ -3,9 +3,13 @@
     <!-- 左侧菜单 -->
     <div class="layout_slider">
       <Logo></Logo>
-      <el-menu background-color="#001529" text-color="white">
-        <Menu :menuList="userStore.menuRoutes"></Menu>
-      </el-menu>
+      <!-- 展示菜单 -->
+      <!-- 滚动组件 -->
+      <el-scrollbar class="scrollbar">
+        <el-menu background-color="#001529" text-color="white">
+          <Menu :menuList="userStore.menuRoutes"></Menu>
+        </el-menu>
+      </el-scrollbar>
     </div>
     <!-- 顶部导航 -->
     <div class="layout_tabbar"></div>
@@ -31,10 +35,16 @@ let userStore = useUserStore()
     width: $base-menu-width;
     height: 100vh;
     background-color: $base-menu-background;
+
     .scrollbar {
       width: 100%;
       height: calc(100vh - $base-menu-logo-height);
+
+      .el-menu {
+        border-right: none;
+      }
     }
+
   }
 
   .layout_tabbar {

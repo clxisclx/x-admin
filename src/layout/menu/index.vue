@@ -1,5 +1,5 @@
 ﻿<template>
-  <template v-for="(item, index) in menuList" :key="item.path">
+  <template v-for="(item) in menuList" :key="item.path">
     <!-- 没有子路由 -->
     <template v-if="!item.children">
       <el-menu-item :index="item.path" v-if="!item.meta.hidden">
@@ -13,10 +13,7 @@
     </template>
     <!-- 有子路由但是只有一个子路由 -->
     <template v-if="item.children && item.children.length == 1">
-      <el-menu-item
-        :index="item.children[0].path"
-        v-if="!item.children[0].meta.hidden"
-      >
+      <el-menu-item :index="item.children[0].path" v-if="!item.children[0].meta.hidden">
         <el-icon>
           <component :is="item.children[0].meta.icon"></component>
         </el-icon>
@@ -26,10 +23,7 @@
       </el-menu-item>
     </template>
     <!-- 有子路由且个数大于一个1 -->
-    <el-sub-menu
-      :index="item.path"
-      v-if="item.children && item.children.length > 1"
-    >
+    <el-sub-menu :index="item.path" v-if="item.children && item.children.length > 1">
       <template #title>
         <el-icon>
           <component :is="item.meta.icon"></component>
@@ -41,12 +35,16 @@
   </template>
 </template>
 
-<script lang="ts" setup name="Menu">
-import { useRouter } from 'vue-router'
+<script lang="ts" setup>
 // 父组件传递的路由数组
 defineProps(['menuList'])
 
-let $router = useRouter()
 </script>
 
-<style scoped></style>
+<script lang="ts">
+export default {
+  name: "Menu"
+}
+</script>
+
+<style scoped lang="scss"></style>
