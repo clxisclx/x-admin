@@ -15,7 +15,7 @@
     <div class="layout_tabbar"></div>
     <!-- 内容展示区域 -->
     <div class="layout_main">
-      <router-view></router-view>
+      <Main></Main>
     </div>
   </div>
 </template>
@@ -23,7 +23,9 @@
 <script lang="ts" setup>
 import Logo from '@/layout/logo/index.vue'
 import Menu from '@/layout/menu/index.vue'
+import Main from '@/layout/main/index.vue'
 import { useUserStore } from '@/store/modules/user'
+import { MagicString } from 'vue/compiler-sfc';
 let userStore = useUserStore()
 </script>
 
