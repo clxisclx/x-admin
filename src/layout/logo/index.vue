@@ -5,8 +5,14 @@
   </div>
 </template>
 
-<script lang="ts" setup name="Logo">
+<script lang="ts" setup>
 import settings from '@/settings'
+</script>
+
+<script lang="ts">
+export default {
+    name:'Tabbar'
+}
 </script>
 
 <style scoped lang="scss">
