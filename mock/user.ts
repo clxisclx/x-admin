@@ -44,9 +44,19 @@ export default [
       if (!checkUser) {
         return { code: 201, data: { message: '账号或者密码不正确' } }
       }
+      console.log('oo', checkUser.avatar)
+
       //如果有返回成功信息
-      const { token } = checkUser
-      return { code: 200, data: { token } }
+      // const { token } = checkUser
+      return { code: 200, data: checkUser }
+    },
+  },
+  // 用户退出接口
+  {
+    url: '/api/user/logout', //请求地址
+    method: 'post', //请求方式
+    response: () => {
+      return { code: 200, data: {} }
     },
   },
   // 获取用户信息

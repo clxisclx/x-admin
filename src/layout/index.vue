@@ -1,23 +1,27 @@
 ﻿<template>
   <div class="layout_container">
     <!-- 左侧菜单 -->
-    <div class="layout_slider" :class="{ fold: LayOutSettingStore.fold}">
+    <div class="layout_slider" :class="{ fold: LayOutSettingStore.fold }">
       <Logo></Logo>
       <!-- 展示菜单 -->
       <!-- 滚动组件 -->
       <el-scrollbar class="scrollbar">
-        <el-menu background-color="#001529" text-color="white" :default-active="$route.path"
-          :collapse="LayOutSettingStore.fold ? true : false">
+        <el-menu
+          background-color="#001529"
+          text-color="white"
+          :default-active="$route.path"
+          :collapse="LayOutSettingStore.fold ? true : false"
+        >
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
     </div>
     <!-- 顶部导航 -->
-    <div class="layout_tabbar" :class="{ fold: LayOutSettingStore.fold}">
+    <div class="layout_tabbar" :class="{ fold: LayOutSettingStore.fold }">
       <Tabbar />
     </div>
     <!-- 内容展示区域 -->
-    <div class="layout_main" :class="{ fold: LayOutSettingStore.fold}">
+    <div class="layout_main" :class="{ fold: LayOutSettingStore.fold }">
       <Main></Main>
     </div>
   </div>
@@ -28,12 +32,12 @@ import { useLayOutSettingStore } from '@/store/modules/setting'
 import Logo from '@/layout/logo/index.vue'
 import Menu from '@/layout/menu/index.vue'
 import Main from '@/layout/main/index.vue'
-import Tabbar from "@/layout/tabbar/index.vue"
+import Tabbar from '@/layout/tabbar/index.vue'
 import { useUserStore } from '@/store/modules/user'
 import { useRoute } from 'vue-router'
 let userStore = useUserStore()
-let $route = useRoute();
-let LayOutSettingStore = useLayOutSettingStore();
+let $route = useRoute()
+let LayOutSettingStore = useLayOutSettingStore()
 </script>
 
 <style scoped lang="scss">
@@ -61,7 +65,6 @@ let LayOutSettingStore = useLayOutSettingStore();
         border-right: none;
       }
     }
-
   }
 
   .layout_tabbar {

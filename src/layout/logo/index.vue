@@ -11,7 +11,7 @@ import settings from '@/settings'
 
 <script lang="ts">
 export default {
-    name:'Tabbar'
+  name: 'Logo',
 }
 </script>
 
@@ -22,14 +22,13 @@ export default {
   color: white;
   display: flex;
   align-items: center;
-  padding: 10px;
   img {
     width: 50px;
     height: 50px;
   }
   p {
     font-size: $base-logo-title-fontSize;
-    margin-left: 30px;
+    margin-left: 5px;
   }
 }
 </style>

@@ -18,7 +18,7 @@ export const constantRoute = [
     redirect: '/home',
     meta: {
       title: '',
-      hidden: true
+      hidden: true,
     },
     children: [
       {
@@ -27,9 +27,9 @@ export const constantRoute = [
         meta: {
           title: '首页',
           hidden: false,
-          icon: 'HomeFilled'
+          icon: 'HomeFilled',
         },
-      }
+      },
     ],
   },
   {
@@ -38,7 +38,7 @@ export const constantRoute = [
     name: '404',
     meta: {
       title: '404',
-      hidden: true
+      hidden: true,
     },
   },
   {
@@ -47,7 +47,7 @@ export const constantRoute = [
     name: 'Any',
     meta: {
       title: '任意',
-      hidden: true
+      hidden: true,
     },
   },
   {
@@ -57,7 +57,7 @@ export const constantRoute = [
     meta: {
       title: '数据大屏',
       hidden: false,
-      icon: 'Platform'
+      icon: 'Platform',
     },
   },
   {
