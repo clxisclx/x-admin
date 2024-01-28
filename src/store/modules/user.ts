@@ -25,8 +25,8 @@ export const useUserStore = defineStore('User', {
       const result: loginResponseData = await reqLogin(data)
 
       if (result.code == 200) {
-        console.log('xxxx',result);
-        
+        console.log('xxxx', result)
+
         // 登录成功
         this.token = result.data as string
         SET_TOKEN(result.data as string)
