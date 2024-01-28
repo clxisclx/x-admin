@@ -27,7 +27,6 @@
         <el-switch
           @change="changeDark"
           v-model="dark"
-          class="mt-2"
           style="margin-left: 20px"
           inline-prompt
           active-icon="MoonNight"
@@ -36,7 +35,7 @@
       </el-form-item>
     </el-form>
     <template #reference>
-      <el-button size="small" icon="Setting" circle></el-button>
+      <el-button size="small" icon="Setting" circle/>
     </template>
   </el-popover>
   <img

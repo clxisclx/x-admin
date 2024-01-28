@@ -10,6 +10,7 @@ import gloablComponent from './components/index'
 import pinia from './store'
 //引入路由
 import { router } from './router'
+import './permissiontion'
 const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
