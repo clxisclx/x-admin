@@ -1,7 +1,11 @@
 ﻿import { defineStore } from 'pinia'
 import { GET_TOKEN, REMOVE_TOKEN, SET_TOKEN } from '@/utils/token'
 import { constantRoute } from '@/router/routes'
-import { loginResponseData, type loginFormData, userInfoResponseData } from '@/api/user/type'
+import {
+  loginResponseData,
+  type loginFormData,
+  userInfoResponseData,
+} from '@/api/user/type'
 import { reqLogin, reqLogout, reqUserInfo } from '@/api/user'
 // 用户状态
 export const useUserStore = defineStore('User', {
@@ -21,7 +25,7 @@ export const useUserStore = defineStore('User', {
       const result: loginResponseData = await reqLogin(data)
 
       if (result.code == 200) {
-        // 登录成功        
+        // 登录成功
         this.token = result.data as string
         SET_TOKEN(result.data as string)
         return Promise.resolve('ok')
@@ -45,15 +49,15 @@ export const useUserStore = defineStore('User', {
     },
 
     // 获取用户信息
-    async userInfo(){
+    async userInfo() {
       const result: userInfoResponseData = await reqUserInfo()
-      if(result.code == 200){
+      if (result.code == 200) {
         this.username = result.data.username
         this.avatar = result.data.avatar
         return 'ok'
       } else {
         return Promise.reject(new Error(result.message))
       }
-    }
+    },
   },
 })

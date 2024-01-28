@@ -10,14 +10,14 @@ const userStore = useUserStore(pinia)
 
 router.beforeEach(async (to: any, from: any, next: any) => {
   nprogress.start()
-  const token = userStore.token;
-  const username = userStore.username;
-  console.log('username:',username);
-  console.log('token:',token);
-  console.log('path:',to.path);
+  const token = userStore.token
+  const username = userStore.username
+  console.log('username:', username)
+  console.log('token:', token)
+  console.log('path:', to.path)
 
   // 用户登录判断
-  if (token) {    
+  if (token) {
     // 登录成功，访问login,不能访问，指向首页
     if (to.path == '/login') {
       next({ path: '/' })
@@ -29,12 +29,12 @@ router.beforeEach(async (to: any, from: any, next: any) => {
         // 如果没有用户信息则去获取
         try {
           await userStore.userInfo()
-          console.log('----to:',to);
-          
+          console.log('----to:', to)
+
           next({ ...to })
-        } catch(error) {
-          console.log('111',error);
-          
+        } catch (error) {
+          console.log('111', error)
+
           //token过期:获取不到用户信息了
           //用户手动修改本地存储token
           //退出登录->用户相关的数据清空
