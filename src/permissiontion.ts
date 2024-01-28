@@ -8,6 +8,7 @@ import settings from './settings'
 import pinia from './store'
 const userStore = useUserStore(pinia)
 
+// @ts-ignore
 router.beforeEach(async (to: any, from: any, next: any) => {
   nprogress.start()
   const token = userStore.token
@@ -53,6 +54,7 @@ router.beforeEach(async (to: any, from: any, next: any) => {
   }
 })
 
+// @ts-ignore
 router.afterEach((to: any, from: any) => {
   document.title = `${settings.title} - ${to.meta.title}`
   nprogress.done()

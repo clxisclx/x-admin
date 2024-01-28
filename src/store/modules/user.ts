@@ -25,6 +25,8 @@ export const useUserStore = defineStore('User', {
       const result: loginResponseData = await reqLogin(data)
 
       if (result.code == 200) {
+        console.log('xxxx',result);
+        
         // 登录成功
         this.token = result.data as string
         SET_TOKEN(result.data as string)
@@ -52,7 +54,7 @@ export const useUserStore = defineStore('User', {
     async userInfo() {
       const result: userInfoResponseData = await reqUserInfo()
       if (result.code == 200) {
-        this.username = result.data.username
+        this.username = result.data.name
         this.avatar = result.data.avatar
         return 'ok'
       } else {
