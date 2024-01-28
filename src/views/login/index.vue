@@ -104,6 +104,7 @@ const login = async () => {
  * @param value 表单元素文本内容
  * @param calllback 校验后的回调函数
  */
+// @ts-ignore
 const validatorUserName = (rule: any, value: any, callback: any) => {
   if (value.length >= 5) {
     callback()
@@ -111,7 +112,7 @@ const validatorUserName = (rule: any, value: any, callback: any) => {
     callback(new Error('账号长度至少5位'))
   }
 }
-
+// @ts-ignore
 const validatorPassword = (rule: any, value: any, callback: any) => {
   if (value.length >= 6) {
     callback()

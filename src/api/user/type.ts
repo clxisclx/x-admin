@@ -13,7 +13,7 @@ export interface ResponseData {
 import type { UserState } from '@/store/modules/types/type'
 // 定义登录接口返回数据类型
 export interface loginResponseData extends ResponseData {
-  data: UserState
+  data: string
 }
 
 // 定义获取用户信息返回数据类型
@@ -22,7 +22,7 @@ export interface userInfoResponseData extends ResponseData {
     routes: string[]
     buttons: string[]
     roles: string[]
-    name: string
+    username: string
     avatar: string
   }
 }

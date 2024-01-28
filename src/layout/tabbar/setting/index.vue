@@ -35,7 +35,7 @@
       </el-form-item>
     </el-form>
     <template #reference>
-      <el-button size="small" icon="Setting" circle/>
+      <el-button size="small" icon="Setting" circle />
     </template>
   </el-popover>
   <img
